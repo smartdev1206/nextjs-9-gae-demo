@@ -18,3 +18,5 @@ node_modules/
 
 # Next.js source code
 /pages/
+
+build/
