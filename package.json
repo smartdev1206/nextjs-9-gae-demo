@@ -23,13 +23,10 @@
     "app"
   ],
   "scripts": {
-    "dev": "next dev",
-    "gcp-predeploy": "find ./build -name '\\[...*' -exec bash -c 'mv \"$1\" \"${1/.../@@@}\"' -- {} \\;",
-    "gcp-build": "find ./build -name '\\[@@@*' -exec bash -c 'mv \"$1\" \"${1/@@@/...}\"' -- {} \\;",
-    "build": "rm -rf ./build && next build",
+    "dev": "next -p 3030",
     "start": "next start -p 8080",
-    "deploy": "npm run build && npm run gcp-predeploy && gcloud app deploy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gcp-build": "rm -rf ./build && next build",
+    "build": "rm -rf ./build && next build",
   },
   "dependencies": {
     "next": "9.5.5",
